@@ -1,0 +1,39 @@
+---
+---
+@import "variables";
+
+.navbar-custom {
+	background-color: $grey-color-dark;
+    color: $wolfpack-white;
+    border: 0;
+  	border-radius: 0 !important;
+}
+
+.navbar-custom .navbar-nav > li > a {
+  	color: #fff;
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: $wolfpack-white;
+    background-color: transparent;
+    // background-color: $wolfpack-red;
+}
+
+.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    // color: $grey-color-dark;
+    // background-color: $grey-color-light;
+    color: $wolfpack-white;
+    background-color: $wolfpack-red;
+}
+
+.navbar-custom .navbar-brand {
+  	color:#eeeeee;
+    font-size: 20px;
+}
+.navbar-custom .navbar-toggle {
+  	background-color:#eeeeee;
+}
+.navbar-custom .icon-bar {
+  	background-color:#33aa33;
+}

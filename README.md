@@ -6,7 +6,7 @@ Repository for GitHub page.
 ### Building Locally
 To run the Jeykll site locally:
 
-    bundle exec jekyll server
+    bundle exec jekyll serve
 
 Then view at `http://localhost:4000`.
 
