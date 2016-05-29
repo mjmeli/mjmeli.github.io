@@ -23,7 +23,7 @@
 .navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
     color: $wolfpack-white;
-    background-color: $wolfpack-red;
+    background-color: $wolfpack-red-dark;
 }
 
 .navbar-custom .navbar-brand {
@@ -34,36 +34,58 @@
     background-color: #eeeeee;
 }
 .navbar-custom .icon-bar {
-    background-color: $wolfpack-red;
+    background-color: $wolfpack-red-dark;
 }
 
 .red-bg {
-    background-color: $wolfpack-red;
+    background-color: $wolfpack-red-dark;
     color: $wolfpack-white;
 }
 
-#carousel-title {
-    padding-top: 15px;
-    h1, h2, h3 {
-        margin-top: 0px;
-        margin-bottom: 0px;
+#masthead {
+    max-width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    .btn-lg {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn-outline-inverse {
+      color: $wolfpack-white;
+      background-color: $wolfpack-red-dark;
+      border-style: solid;
+      border-width: 2px;
+      border-color: $wolfpack-white;
+    }
+
+    .btn-outline-inverse:hover,
+    .btn-outline-inverse:focus,
+    .btn-outline-inverse:active {
+      color: $wolfpack-red-dark;
+      background-color: $wolfpack-white;
+      border-color: $wolfpack-white;
     }
 }
 
-.container-fluid #myCarousel {
-    padding: 0px;
+#headshot {
+    display: inline;
+    width: 300px;
+    height: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $wolfpack-white;
+    margin-top:25px;
+    margin-bottom:25px;
 }
 
-#myCarousel .carousel-control.left, #myCarousel .carousel-control.right {
-    background-image: none
-}
-
-#myCarousel .carousel-inner .item > img {
-    display: block;
-    max-height: 400px;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 15px;
-    padding-bottom: 5px;
+#tagline {
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
