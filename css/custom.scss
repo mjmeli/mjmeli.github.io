@@ -7,6 +7,7 @@
     color: $wolfpack-white;
     border: 0;
   	border-radius: 0 !important;
+    margin-bottom: 1px !important;
 }
 
 .navbar-custom .navbar-nav > li > a {
@@ -26,12 +27,43 @@
 }
 
 .navbar-custom .navbar-brand {
-    color:#eeeeee;
+    color: #eeeeee;
     font-size: 20px;
 }
 .navbar-custom .navbar-toggle {
-    background-color:#eeeeee;
+    background-color: #eeeeee;
 }
 .navbar-custom .icon-bar {
     background-color: $wolfpack-red;
+}
+
+.red-bg {
+    background-color: $wolfpack-red;
+    color: $wolfpack-white;
+}
+
+#carousel-title {
+    padding-top: 15px;
+    h1, h2, h3 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+.container-fluid #myCarousel {
+    padding: 0px;
+}
+
+#myCarousel .carousel-control.left, #myCarousel .carousel-control.right {
+    background-image: none
+}
+
+#myCarousel .carousel-inner .item > img {
+    display: block;
+    max-height: 400px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
