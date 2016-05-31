@@ -42,6 +42,16 @@
     color: $wolfpack-white;
 }
 
+.white-bg {
+    background-color: $wolfpack-white;
+    color: $grey-color-dark;
+}
+
+.grey-bg {
+    background-color: $grey-color-dark;
+    color: $wolfpack-off-white;
+}
+
 #masthead {
     max-width: 650px;
     display: block;
@@ -108,13 +118,26 @@
     margin-right: auto;
 }
 
+.half-hr {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .info-blurb-text {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 16px;
 }
 
-#info-blurb-button-row {
+#home-content {
+    padding-bottom: 30px;
+    max-width: 1200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
     .btn-lg {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -138,6 +161,35 @@
       color: $wolfpack-white;
       background-color: $wolfpack-red-dark;
       border-color: $wolfpack-red-dark;
+    }
+}
+
+#home-resume {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 950px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    .btn {
+        margin-top: 10px;
+    }
+
+    .btn-outline {
+      color: $wolfpack-off-white;
+      background-color: $grey-color-dark;
+      border-style: solid;
+      border-width: 2px;
+      border-color: $wolfpack-off-white;
+    }
+
+    .btn-outline:hover,
+    .btn-outline:focus,
+    .btn-outline:active {
+      color: $grey-color-dark;
+      background-color: $wolfpack-off-white;
+      border-color: $wolfpack-off-white;
     }
 }
 
