@@ -29,6 +29,7 @@
 .navbar-custom .navbar-brand {
     color: #eeeeee;
     font-size: 20px;
+    padding-left: 30px;
 }
 .navbar-custom .navbar-toggle {
     background-color: #eeeeee;
@@ -42,6 +43,12 @@
     color: $wolfpack-white;
 }
 
+.red-bg-fade {
+    background-color: $wolfpack-red-dark;
+    color: $wolfpack-white;
+    background-image: linear-gradient(to bottom, darken($wolfpack-red-dark, 2%), lighten($wolfpack-red-dark, 2%));
+}
+
 .white-bg {
     background-color: $wolfpack-white;
     color: $grey-color-dark;
@@ -52,7 +59,7 @@
     color: $wolfpack-off-white;
 }
 
-#masthead {
+.masthead {
     max-width: 650px;
     display: block;
     margin-left: auto;
@@ -69,7 +76,7 @@
 
     .btn-outline-inverse {
       color: $wolfpack-white;
-      background-color: $wolfpack-red-dark;
+      background-color: transparent;
       border-style: solid;
       border-width: 2px;
       border-color: $wolfpack-white;
@@ -137,7 +144,85 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
 
+#home-resume {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 950px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    .btn {
+        margin-top: 10px;
+    }
+
+    .btn-outline {
+      color: $wolfpack-off-white;
+      background-color: $grey-color-dark;
+      border-style: solid;
+      border-width: 2px;
+      border-color: $wolfpack-off-white;
+    }
+
+    .btn-outline:not(:focus):hover {
+      color: $grey-color-dark;
+      background-color: $wolfpack-off-white;
+      border-color: $wolfpack-off-white;
+    }
+}
+
+#footer-custom {
+    max-width: 700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fixed-width-content {
+    max-width: 1140px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page-header-custom {
+    margin-top: 0px;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        h1 {
+            font-size: 60px;
+            line-height: 1;
+            text-align: left;
+        }
+
+        p {
+            font-size: 24px !important;
+            text-align: left;
+        }
+    }
+
+    p {
+        margin-bottom: 0px;
+        font-weight: 300;
+        line-height: 1.4;
+        font-size: 20px;
+        color: $wolfpack-off-white;
+    }
+}
+
+.page-content-custom {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.row {
     .btn-lg {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -162,40 +247,4 @@
       background-color: $wolfpack-red-dark;
       border-color: $wolfpack-red-dark;
     }
-}
-
-#home-resume {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    max-width: 950px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    .btn {
-        margin-top: 10px;
-    }
-
-    .btn-outline {
-      color: $wolfpack-off-white;
-      background-color: $grey-color-dark;
-      border-style: solid;
-      border-width: 2px;
-      border-color: $wolfpack-off-white;
-    }
-
-    .btn-outline:hover,
-    .btn-outline:focus,
-    .btn-outline:active {
-      color: $grey-color-dark;
-      background-color: $wolfpack-off-white;
-      border-color: $wolfpack-off-white;
-    }
-}
-
-#footer-custom {
-    max-width: 700px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
