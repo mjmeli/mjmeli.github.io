@@ -2,6 +2,10 @@
 ---
 @import "variables";
 
+html {
+  overflow-y: scroll;
+}
+
 .navbar-custom {
     background-color: $grey-color-dark;
     color: $wolfpack-white;
@@ -181,17 +185,19 @@
 
 .fixed-width-content {
     max-width: 1140px;
+    padding-left: 30px;
+    padding-right: 30px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 .page-header-custom {
     margin-top: 0px;
     padding-top: 35px;
     padding-bottom: 50px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
     text-align: center;
 
     @media screen and (min-width: 768px) {
