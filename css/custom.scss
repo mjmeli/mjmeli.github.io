@@ -290,6 +290,11 @@ hr {
     .col-vertical-align {
         display: flex;
         align-items: center;
+        margin-top: 15px;
+
+        h2 {
+            margin-top: 10px;
+        }
     }
 }
 
