@@ -20,7 +20,6 @@ html {
 
 .navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     color: $wolfpack-white;
-    // background-color: transparent;
     background-color: $grey-color;
 }
 
@@ -35,6 +34,20 @@ html {
     font-size: 20px;
     padding-left: 30px;
 }
+
+// Shrink text when the nav bar links drop to lower line before collapsing
+@media screen and (min-width: 768px) and (max-width: 825px) {
+    .navbar-custom .navbar-brand {
+        font-size: 18px;
+        padding-left: 20px;
+    }
+
+    .navbar-custom .navbar-nav > li > a {
+        font-size: 13px;
+    }
+}
+
+
 .navbar-custom .navbar-toggle {
     background-color: #eeeeee;
 }
