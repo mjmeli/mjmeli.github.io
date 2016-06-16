@@ -287,3 +287,12 @@ hr {
     display: block;
     width: auto;
 }
+
+.large-tab {
+    @media screen and (min-width: 480px) {
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        line-height: 26.4px;
+    }
+}
