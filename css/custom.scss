@@ -273,7 +273,7 @@ hr {
 
 // Matching columns to the same height
 // http://stackoverflow.com/questions/20547819/vertical-align-with-bootstrap-3
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
     .col-vertical-align {
         display: flex;
         align-items: center;
@@ -286,6 +286,10 @@ hr {
     margin-right: auto;
     display: block;
     width: auto;
+
+    @media screen and (max-width: 768px) {
+        margin-top: 20px;
+    }
 }
 
 .nav-tabs {
@@ -293,16 +297,14 @@ hr {
         margin-left: 0px;
     }
 }
+
 .large-tab {
     margin-top: 20px;
     margin-bottom: 10px;
     line-height: 26.4px;
+    font-size: 18px;
 
     @media screen and (min-width: 480px) {
         font-size: 24px;
-    }
-
-    @media screen and (min-width: 355px) and (max-width: 479px) {
-        font-size: 18px;
     }
 }
