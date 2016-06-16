@@ -19,14 +19,15 @@ html {
 }
 
 .navbar-custom {
-    .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    .navbar-nav > .active > a {
         color: $wolfpack-white;
         background-color: $grey-color;
     }
-}
 
-.navbar-custom {
-    .navbar-nav > li > a:hover, .nav > li > a:focus {
+    .navbar-nav > li > a:hover,
+    .navbar-nav > li > a:focus,
+    .navbar-nav > .active > a:hover,
+    .navbar-nav > .active > a:focus {
         text-decoration: none;
         color: $wolfpack-white;
         background-color: $wolfpack-red-dark;
