@@ -269,9 +269,11 @@ html {
 
 // Matching columns to the same height
 // http://stackoverflow.com/questions/20547819/vertical-align-with-bootstrap-3
-.col-vertical-align {
-    display: flex;
-    align-items: center;
+@media screen and (min-width: 767px) {
+    .col-vertical-align {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .experience-image {
