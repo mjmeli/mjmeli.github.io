@@ -322,11 +322,33 @@ hr {
 
 .large-tab {
     margin-top: 20px;
-    margin-bottom: 15px;
     line-height: 26.4px;
     font-size: 18px;
 
     @media screen and (min-width: 480px) {
         font-size: 24px;
+    }
+}
+
+.project-item {
+    margin-top: 10px;
+
+    h2, h4 {
+        line-height: 30px;
+    }
+
+    .col-sm-6 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    img {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 90%;
+        border:1px solid $grey-color-dark;
     }
 }

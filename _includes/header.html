@@ -13,10 +13,16 @@
                 {% assign sorted_pages = site.pages | sort:"order" %}
                 {% for my_page in sorted_pages %}
                     {% if my_page.title %}
-                        {% if page.url == my_page.url %}
+                        {% if page.url == my_page.url and page.navbar_hide != true %}
                             <li class="active"><a href="{{my_page.url}}" class="active">{{my_page.title}}</a></li>
                         {% else %}
-                            <li><a href="{{my_page.url}}">{{my_page.title}}</a></li>
+                            {% if my_page.title == "Projects" and page.page_type == "project"%}
+                                <li class="active"><a href="{{my_page.url}}" class="active">{{my_page.title}}</a></li>
+                            {% else %}
+                                {% if my_page.navbar_hide != true %}
+                                    <li><a href="{{my_page.url}}">{{my_page.title}}</a></li>
+                                {% endif %}
+                            {% endif %}
                         {% endif %}
                     {% endif %}
                 {% endfor %}
