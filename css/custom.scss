@@ -350,5 +350,48 @@ hr {
         display: block;
         width: 90%;
         border:1px solid $grey-color-dark;
+
+        -webkit-animation: fadein 2.5s; /* Safari and Chrome */
+        -moz-animation: fadein 2.5s; /* Firefox */
+        -ms-animation: fadein 2.5s; /* Internet Explorer */
+        -o-animation: fadein 2.5s; /* Opera */
+        animation: fadein 2.5s;
     }
+}
+
+.img-circle {
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -moz-animation: fadein 1s; /* Firefox */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera */
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
