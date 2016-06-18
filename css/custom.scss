@@ -352,3 +352,35 @@ hr {
         border:1px solid $grey-color-dark;
     }
 }
+
+.dark-wide-link {
+    background-color: $grey-color-dark;
+    color: $wolfpack-off-white;
+
+    a:hover,
+    a:focus {
+        color: $wolfpack-off-white;
+        text-decoration: none;
+    }
+
+    .social-image {
+        margin-top: 15px;
+    }
+
+    .btn {
+        margin: 15px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        color: $wolfpack-off-white;
+    }
+
+    .btn-outline {
+        border-style: solid;
+        border-width: 2px;
+        border-color: $grey-color-dark;
+    }
+
+    .btn-outline:hover {
+        border-color: $wolfpack-off-white;
+    }
+}
