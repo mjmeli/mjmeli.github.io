@@ -29,7 +29,7 @@ The user is able to change the water output of the shower head by turning a ring
 ## Results
 Our product was received to much praise amongst the judges. Our team won the grand prize award for the best project at the Make-A-Thon.
 
-In addition, we were featured in NC State's newspaper, the Technician. The feature can be read online at the following link: [http://www.technicianonline.com/features/article_f431065a-e999-11e5-9a18-33a856d12662.html](http://www.technicianonline.com/features/article_f431065a-e999-11e5-9a18-33a856d12662.html)
+In addition, we were featured in NC State's newspaper, the Technician. [Click here to read the feature!](http://www.technicianonline.com/features/article_f431065a-e999-11e5-9a18-33a856d12662.html)
 
 ## Credits
 This code was created as a collaboration between myself and Derek Whatley. The overall project was created by Derek Whatley, Brian Iezzi, Brian Murphy, and myself.
