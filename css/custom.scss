@@ -279,7 +279,18 @@ hr {
 .social-image {
     max-height: 120px;
     width: auto;
-    margin-top: 20px;
+    margin: 10px;
+}
+
+.project-image {
+    max-width: 85%;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid black;
 }
 
 .page-lead {
@@ -287,6 +298,14 @@ hr {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.project-page-lead {
+    max-width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
 }
 
 // Matching columns to the same height
