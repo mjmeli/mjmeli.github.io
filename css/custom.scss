@@ -279,7 +279,8 @@ hr {
 .social-image {
     max-height: 120px;
     width: auto;
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .project-image {
@@ -401,5 +402,12 @@ hr {
 
     .btn-outline:hover {
         border-color: $wolfpack-off-white;
+    }
+}
+
+.long-text {
+    .col-sm-6 {
+        margin-left: 0px;
+        padding-left: 0px;
     }
 }
