@@ -46,13 +46,16 @@ There is some difficulty in this task because Facebook does not provide an API f
 
 As such, a tool that reads Facebook messages requires the user to take some intervention on their part and request that Facebook send them an archive file of their messages. This is simple and takes less than 10 minutes, but the resulting file is a massive HTML file. Mine was over 60 MB! This takes some effort parsing (more on that later...).
 
-## word_cloud Library
+# word_cloud Library
 My tool can create some really cool looking word clouds. Unfortunately, I can't take any credit for how the word clouds look. I simply provided a wrapper with my tool over the existing [word_cloud Python library](https://github.com/amueller/word_cloud) created by [Andreas Mueller (amueller)](https://github.com/amueller). His library is very easy to use and can create some amazing word clouds within minutes.
 
 <div class="project-page-images">
     <img src="/assets/projects/facebook_wordcloud/2.png" class="project-image" alt="Heart Shape"/>
     <p>This American flag shows how multiple-colors can be used</p>
 </div>
+
+# Natural Language Toolkit
+In order to filter out common words like "the" (called *stopwords*) that would obviously appear the most, I used a feature of the [Natural Language Toolkit](http://www.nltk.org/) (`nltk`) that is able to identify and remove these words from my word list.
 
 ## Installation
 Want to give my library a go? The tool is available on PyPi, so you can install it very easily with `pip`:
