@@ -212,11 +212,16 @@ hr {
 
 .fixed-width-content {
     max-width: 1140px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+
+    @media screen and (min-width: 768px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
 .page-header-custom {
