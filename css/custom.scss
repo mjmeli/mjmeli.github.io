@@ -6,6 +6,11 @@ html {
   overflow-y: scroll;
 }
 
+p {
+    font-size: 17px;
+    margin-bottom: 15px !important;
+}
+
 .navbar-custom {
     background-color: $grey-color-dark;
     color: $wolfpack-white;
@@ -284,13 +289,12 @@ hr {
 }
 
 .project-image {
-    max-width: 85%;
     width: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 40px;
     border: 1px solid $grey-color-light;
 }
 
@@ -368,7 +372,7 @@ hr {
         margin-left: auto;
         margin-right: auto;
         display: block;
-        width: 90%;
+        width: 100%;
         border:1px solid $grey-color-light;
     }
 }
@@ -411,4 +415,11 @@ hr {
         padding-left: 0px;
         padding-right: 0px;
     }
+}
+
+.narrow-content {
+    max-width: 850px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
