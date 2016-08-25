@@ -5,21 +5,93 @@ page_type: project
 
 permalink: /projects/facebook_wordcloud/
 return_div: facebook_wordcloud
-title: Facebook Chat Word Cloud
+title: Facebook Word Cloud
 description: Python package that can generate word clouds from a Facebook Messenger conversation.
 github: https://github.com/mjmeli/facebook-chat-word-cloud
 ---
-<h1 class="text-center" style="margin-top: 0px">Facebook Chat Word Cloud</h1>
-<p class="lead text-center project-page-lead">knowURshower is a project that came out of a weekend-long Make-A-Thon (hackathon) at NC State University. The Make-A-Thon was sustainability themed and so our team was tasked with devising a product that would help with water sustainability on campus. Our solution was a FitBit-like device that allows residents of dorms to easily and intuitively track their water usage and compete with friends.</p>
+<h1 class="text-center" style="margin-top: 0px">Facebook Word Cloud</h1>
+<p class="lead text-center project-page-lead">Have you ever wondered what words you and your friends use most? Word clouds are a great way to visualize relative word frequency, yet there is no convenient tool to create one from your Facebook Chat messages. My solution is Facebook Word Cloud, a Python module that allows you to create beautiful word clouds from any of your Facebook conversations.</p>
 <hr>
 
+<div class="project-page-quicklinks">
 <div class="row text-center long-text">
-    <div class="col-sm-6">
-        <img src="/assets/logos/technician_logo.png" class="social-image" alt="Technician Logo" style="margin-bottom:10px"/>
-        <p class=lead><a href="http://www.technicianonline.com/features/article_f431065a-e999-11e5-9a18-33a856d12662.html" target="_blank" class="btn btn-outline btn-lg">Read <i>The Technician</i> Article</a></p>
+    <div class="col-sm-4">
+        <img src="/assets/logos/python_logo.png" class="social-image" alt="Python Logo"/>
+        <p class=lead><a href="https://pypi.python.org/pypi/facebook_wordcloud" target="_blank" class="btn btn-outline btn-lg">View Package on PyPi</a></p>
     </div>
-    <div class="col-sm-6">
-        <img src="/assets/logos/youtube_logo.jpg" class="social-image" alt="YouTube Logo" style="margin-bottom:10px"/>
-        <p class=lead><a href="https://www.youtube.com/watch?v=6MhP2V8U7dE" target="_blank" class="btn btn-outline btn-lg">Watch Our Pitch on YouTube</a></p>
+    <div class="col-sm-4">
+        <img src="/assets/logos/github_mark.png" class="social-image" alt="GitHub Logo"/>
+        <p class=lead><a href="https://github.com/mjmeli/facebook-chat-word-cloud" target="_blank" class="btn btn-outline btn-lg">View Code on GitHub</a></p>
     </div>
+    <div class="col-sm-4 visible-mobile-only">
+        <img src="https://travis-ci.org/mjmeli/facebook-chat-word-cloud.svg?branch=master" class="social-image" alt="TravisCI Build Status" style="max-width: 200px"/>
+        <p class=lead><a href="https://travis-ci.org/mjmeli/facebook-chat-word-cloud" target="_blank" class="btn btn-outline btn-lg">View Build on Travis CI</a></p>
+    </div>
+</div>
+</div>
+
+<div class="narrow-content markdown">
+# About
+Facebook Word Cloud is a Python module and tool for parsing your Facebook Chat conversations and building a word cloud from them.
+
+Personally, I do almost all of my communication through Facebook Messenger. One day, I decided that I wanted to see what the most used word was for a couple of my friends. Word clouds are obviously great tools for visualization of relative word frequencies, so I decided a word cloud for Facebook chat would be nice.
+
+There is some difficulty in this task because Facebook does not provide an API for accessing user's chat messages. Well, they used to, and then they took it away! While there are methods to parse through your wall, feed, etc., the same does not exist for the Chat service.
+
+<div class="project-page-images">
+    <img src="/assets/projects/facebook_wordcloud/1.png" class="project-image" alt="Heart Shape"/>
+    <p>Word clouds can be generated in any shape with any coloring</p>
+    <p>Note: These images were generated using a fake conversation to preserve privacy</p>
+</div>
+
+As such, a tool that reads Facebook messages requires the user to take some intervention on their part and request that Facebook send them an archive file of their messages. This is simple and takes less than 10 minutes, but the resulting file is a massive HTML file. Mine was over 60 MB! This takes some effort parsing (more on that later...).
+
+## word_cloud Library
+My tool can create some really cool looking word clouds. Unfortunately, I can't take any credit for how the word clouds look. I simply provided a wrapper with my tool over the existing [word_cloud Python library](https://github.com/amueller/word_cloud) created by [Andreas Mueller (amueller)](https://github.com/amueller). His library is very easy to use and can create some amazing word clouds within minutes.
+
+<div class="project-page-images">
+    <img src="/assets/projects/facebook_wordcloud/2.png" class="project-image" alt="Heart Shape"/>
+    <p>This American flag shows how multiple-colors can be used</p>
+</div>
+
+## Installation
+Want to give my library a go? The tool is available on PyPi, so you can install it very easily with `pip`:
+
+    pip install facebook_wordcloud
+
+If you have any issues, read through the [README on GitHub](https://github.com/mjmeli/facebook-chat-word-cloud).
+
+## Parser Comparison
+Choice of parser made a big difference for this project. As I said, my messages file was 60 MB. I've seen people on the internet who have ones over 100 MB! Parser performance is vital in this situation.
+
+I originally used `BeautifulSoup` and then switched to the `lxml` parser. The performance difference was breaktaking, as reflected in the results below, which were measured when analyzing my 60 MB file. The only downside to using `lxml` is that this is a C library and requires system level library support (i.e. installing dependencies with `apt-get`), while `BeautifulSoup` is a Python library that can simply be installed with `pip` when my module is installed. Of course, the fact that `lxml` is a C library is what the performance can be attributed to, and this benefit is well worth the hassle.
+
+<div class="table-responsive">
+      <table id="status-table" class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th>Parser</th>
+                  <th>Build Tree Runtime (ms)</th>
+                  <th>Max Memory Usage</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>BeautifulSoup</td>
+                  <td>90750</td>
+                  <td>3450 MB (3.45 GB)</td>
+              </tr>
+              <tr>
+                  <td>lxml</td>
+                  <td>1945</td>
+                  <td>910 MB (0.91 GB)</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+<div class="project-page-images">
+    <img src="/assets/projects/facebook_wordcloud/3.png" class="project-image" alt="Heart Shape"/>
+    <p>The word cloud can be shaped using a mask image. You can sure find some interesting choices...</p>
+</div>
 </div>

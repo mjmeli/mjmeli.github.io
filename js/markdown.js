@@ -11,7 +11,8 @@ $(document).ready(function() {
 function convert_markdown_to_html() {
     $('.markdown').each(function(i, obj) {
         var text = obj.innerHTML;
-        var html = (new showdown.Converter()).makeHtml(text);
+        converter = new showdown.Converter();
+        var html = converter.makeHtml(text);
         obj.innerHTML = html;
     });
 }
