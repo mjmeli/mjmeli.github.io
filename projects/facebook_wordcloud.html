@@ -37,23 +37,31 @@ Facebook Word Cloud is a Python module and tool for parsing your Facebook Chat c
 Personally, I do almost all of my communication through Facebook Messenger. One day, I decided that I wanted to see what the most used word was for a couple of my friends. Word clouds are obviously great tools for visualization of relative word frequencies, so I decided a word cloud for Facebook chat would be nice.
 
 There is some difficulty in this task because Facebook does not provide an API for accessing user's chat messages. Well, they used to, and then they took it away! While there are methods to parse through your wall, feed, etc., the same does not exist for the Chat service.
-
-<div class="project-page-images">
-    <img src="/assets/projects/facebook_wordcloud/1.png" class="project-image" alt="Heart Shape"/>
-    <p>Word clouds can be generated in any shape with any coloring</p>
-    <p>Note: These images were generated using a fake conversation to preserve privacy</p>
 </div>
 
+<div class="project-page-images">
+    <div class="row">
+        <img src="/assets/projects/facebook_wordcloud/1.png" class="project-image" alt="Heart Shape"/>
+        <p>Word clouds can be generated in any shape with any coloring</p>
+        <p>Note: These images were generated using a fake conversation to preserve privacy</p>
+    </div>
+</div>
+
+<div class="narrow-content markdown">
 As such, a tool that reads Facebook messages requires the user to take some intervention on their part and request that Facebook send them an archive file of their messages. This is simple and takes less than 10 minutes, but the resulting file is a massive HTML file. Mine was over 60 MB! This takes some effort parsing (more on that later...).
 
 # word_cloud Library
 My tool can create some really cool looking word clouds. Unfortunately, I can't take any credit for how the word clouds look. I simply provided a wrapper with my tool over the existing [word_cloud Python library](https://github.com/amueller/word_cloud) created by [Andreas Mueller (amueller)](https://github.com/amueller). His library is very easy to use and can create some amazing word clouds within minutes.
-
-<div class="project-page-images">
-    <img src="/assets/projects/facebook_wordcloud/2.png" class="project-image" alt="Heart Shape"/>
-    <p>This American flag shows how multiple-colors can be used</p>
 </div>
 
+<div class="project-page-images">
+    <div class="row">
+        <img src="/assets/projects/facebook_wordcloud/2.png" class="project-image img-responsive" alt="American Flag"/>
+        <p>This American flag shows how multiple-colors can be used</p>
+    </div>
+</div>
+
+<div class="narrow-content markdown">
 # Natural Language Toolkit
 In order to filter out common words like "the" (called *stopwords*) that would obviously appear the most, I used a feature of the [Natural Language Toolkit](http://www.nltk.org/) (`nltk`) that is able to identify and remove these words from my word list.
 
@@ -68,6 +76,7 @@ If you have any issues, read through the [README on GitHub](https://github.com/m
 Choice of parser made a big difference for this project. As I said, my messages file was 60 MB. I've seen people on the internet who have ones over 100 MB! Parser performance is vital in this situation.
 
 I originally used `BeautifulSoup` and then switched to the `lxml` parser. The performance difference was breaktaking, as reflected in the results below, which were measured when analyzing my 60 MB file. The only downside to using `lxml` is that this is a C library and requires system level library support (i.e. installing dependencies with `apt-get`), while `BeautifulSoup` is a Python library that can simply be installed with `pip` when my module is installed. Of course, the fact that `lxml` is a C library is what the performance can be attributed to, and this benefit is well worth the hassle.
+</div>
 
 <div class="table-responsive">
       <table id="status-table" class="table table-bordered table-striped">
@@ -94,7 +103,8 @@ I originally used `BeautifulSoup` and then switched to the `lxml` parser. The pe
   </div>
 
 <div class="project-page-images">
-    <img src="/assets/projects/facebook_wordcloud/3.png" class="project-image" alt="Heart Shape"/>
-    <p>The word cloud can be shaped using a mask image. You can sure find some interesting choices...</p>
-</div>
+    <div class="row">
+        <img src="/assets/projects/facebook_wordcloud/3.png" class="project-image" alt="Pooping Dog"/>
+        <p>The word cloud can be shaped using a mask image. You can sure find some interesting choices...</p>
+    </div>
 </div>

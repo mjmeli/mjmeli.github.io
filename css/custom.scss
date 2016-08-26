@@ -296,16 +296,6 @@ hr {
     margin-bottom: 10px;
 }
 
-.project-image {
-    width: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25px;
-    margin-bottom: 40px;
-    border: 1px solid $grey-color-light;
-}
-
 .page-lead {
     max-width: 900px;
     display: block;
@@ -461,11 +451,11 @@ hr {
 }
 
 .project-page-images {
-    max-width: 1200px;
+    max-width: 950px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     margin-top: 25px;
 
     .row .col-sm-6 {
@@ -481,6 +471,9 @@ hr {
     }
 
     .project-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 0px;
         margin-bottom: 0px;
         border: 1px solid $grey-color-light;
@@ -491,7 +484,7 @@ hr {
         font-style: italic;
         font-size: 14px;
         margin-top: 5px;
-        margin-bottom: 0px !important;
+        margin-bottom: 5px !important;
     }
 }
 

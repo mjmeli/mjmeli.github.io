@@ -15,11 +15,15 @@ github: https://github.com/mjmeli/biometric-shirt
 
 <div class="project-page-quicklinks">
     <div class="row text-center long-text">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <img src="/assets/logos/google_photos_logo.jpg" class="social-image" alt="Photo Gallery Logo" style="margin-bottom:10px"/>
             <p class=lead><a href="https://goo.gl/photos/emu3DQQtYQ9hYj2S6" target="_blank" class="btn btn-outline btn-lg">View Photo Gallery</a></p>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+            <img src="/assets/projects/biometric_shirt/SpringDesignDayPoster.jpg" class="social-image" alt="Design Day Poster" style="margin-bottom:10px"/>
+            <p class=lead><a href="/assets/projects/biometric_shirt/SpringDesignDayPoster.pdf" target="_blank" class="btn btn-outline btn-lg">View Our Final Poster</a></p>
+        </div>
+        <div class="col-sm-4">
             <img src="/assets/logos/github_mark.png" class="social-image" alt="GitHub Logo" style="margin-bottom:10px"/>
             <p class=lead><a href="https://github.com/mjmeli/biometric-shirt" target="_blank" class="btn btn-outline btn-lg">View Code on GitHub</a></p>
         </div>
@@ -33,19 +37,54 @@ The Biometric Shirt was my Senior Design project at NC State. As mentioned, the 
 Hydration is a vital component of health. Anyone who is an athlete can attest that this is especially true; being suitably hydrated significantly boosts athletic performance and, of course, avoids some major health risks that can potentially lead to death. Each year, hundreds of people die in the United States due to dehydration, and thousands more are hospitalized. Especially in hot weather conditions, it can be difficult to realize you are even getting dehydrated. **Wouldn't it be great if your phone could tell you that you're dehydrated before you started noticing any problems?**
 
 This was our project. Our goal was to develop an athletic compression shirt that could measure hydration trends. The shirt should be Bluetooth enabled, allowing it to communicate hydration information to an Android application.
+</div>
 
+<div class="project-page-images">
+    <div class="row">
+        <img src="/assets/projects/biometric_shirt/1.jpg" class="project-image img-responsive" />
+        <p>Final PCB and it's 3D printed housing</p>
+    </div>
+</div>
+
+<div class="markdown narrow-content">
 # Technology
 Our primary sponsor for this project was the ASSIST Center at NC State, a research group focused on developing wearables and sensors, among other things. In recent years, ASSIST has developed technology that enables hydration measurement. This is done by measuring impedance across an electrode on your skin and monitoring changes over time. We were given access to this technology and were mentored by the graduate students who worked on this to help us set up a similar system. We ended up using an **AD5933 Impedance Analyzer** to measure complex impedance across our electrode. In addition, we found that body temperature is a fantastic aid in helping predict hydration trends, so we used two **DS18B20 Digital Thermometers** located in the armpits to measure body tempearture.
 
-As computer engineers, we had zero experience with textiles. As such, our sister textiles engineering team was a great help. They were tasked primarily with developing the electrode itself and integrating it, along with all of our electronics, to the shirt. They went through several prototypes for the electrode, but ultimately decided to use a **conductive ink electrode** covered in a special encapsulant for insulation. They used a similiar conductive ink to create electrical pathways from the electrode to metallic snaps, which would snap into our housing and connect to our inputs and outputs. Using snaps allowed us to remove our electronics for washing.
+As computer engineers, we had zero experience with textiles. As such, our sister textiles engineering team was a great help. They were tasked primarily with developing the electrode itself and integrating it, along with all of our electronics, to the shirt. They went through several prototypes for the electrode, but ultimately decided to use a **conductive ink electrode** covered in a special encapsulant for insulation. They used a similiar conductive ink to create electrical pathways from the electrode to metallic snaps, which would snap into our **3D printed** housing and connect to our inputs and outputs. Using snaps allowed us to remove our electronics for washing.
+</div>
 
+<div class="project-page-images">
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="/assets/projects/biometric_shirt/3.jpg" class="project-image img-responsive" />
+            <p>Exterior of the 3D printed housing with USB port on bottom</p>
+        </div>
+        <div class="col-sm-6">
+            <img src="/assets/projects/biometric_shirt/4.jpg" class="project-image img-responsive" />
+            <p>Early prototype of conductive ink electrode</p>
+        </div>
+    </div>
+</div>
+
+<div class="markdown narrow-content">
 For the rest of the electronics, we used an **RFduino microcontroller**. This microcontroller makes **Bluetooth** communication extremely easy. We perform some basic **digital signal processing** on the microcontroller and then transmit the data to the Android application. The entire electronics package would be **rechargeable** via a USB cable.
 
 The bulk of the processing is done on the **Android application**. It takes the data and performs the hydration algorithm that we developed. It then displays this information on the screen in the form of a graph over time. If hydration drops too low, a notification is sent to the user.
 
 # Results
-The final product exceed our expectations. Despite numerous difficulties during the two semesters, we ultimately ended up with a working prototype. At the final Design Day, where we presented our shirt, we had one of our textile team members wear the shirt the entire day. We were able to demonstrate the changes in his body's hydration on our Android app.
+The final product exceeded our expectations. Despite numerous difficulties during the two semesters, we ultimately ended up with a working prototype. At the final Design Day, where we presented our shirt, we had one of our textile team members wear the shirt the entire day. We were able to demonstrate the changes in his body's hydration on our Android app.
 
+Check out our final poster at [this link](/assets/projects/biometric_shirt/SpringDesignDayPoster.pdf)!
+</div>
+
+<div class="project-page-images">
+    <div class="row">
+        <img src="/assets/projects/biometric_shirt/2.jpg" class="project-image img-responsive" />
+        <p>Me with our poster at final design day</p>
+    </div>
+</div>
+
+<div class="markdown narrow-content">
 # Future
 This is definitely a prototype. There were a few issues we noticed during the development of this product, some expected and some unexpected. For example, the sodium in sweat is conductive itself and can work to add noise to our impedance measurements. In addition, excessive motion can reduce noise because the electrode was not perfectly set on the skin; there are alternative electrode technologies that might resolve this issue. The shirt itself had some issues in that the electrode we chose was not strong enough to resist the intensity of multiple wash cycles. The use of different ink encapsulants might serve to strengthen the electrode.
 </div>
