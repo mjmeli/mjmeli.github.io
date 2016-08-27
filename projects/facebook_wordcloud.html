@@ -78,7 +78,7 @@ Choice of parser made a big difference for this project. As I said, my messages 
 I originally used `BeautifulSoup` and then switched to the `lxml` parser. The performance difference was breaktaking, as reflected in the results below, which were measured when analyzing my 60 MB file. The only downside to using `lxml` is that this is a C library and requires system level library support (i.e. installing dependencies with `apt-get`), while `BeautifulSoup` is a Python library that can simply be installed with `pip` when my module is installed. Of course, the fact that `lxml` is a C library is what the performance can be attributed to, and this benefit is well worth the hassle.
 </div>
 
-<div class="table-responsive">
+<div class="table-responsive narrow-content">
       <table id="status-table" class="table table-bordered table-striped">
           <thead>
               <tr>
@@ -101,6 +101,7 @@ I originally used `BeautifulSoup` and then switched to the `lxml` parser. The pe
           </tbody>
       </table>
   </div>
+</div>
 
 <div class="project-page-images">
     <div class="row">
