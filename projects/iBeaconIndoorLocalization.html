@@ -9,4 +9,28 @@ title: iBeacon Indoor Localization
 description: Master's Thesis project focused on using Bluetooth iBeacons for indoor localization.
 ---
 <h1 class="text-center" style="margin-top: 0px">iBeacon Indoor Localization</h1>
-<p class="lead text-center project-page-lead">Under construction</p>
+<p class="lead text-center project-page-lead">Indoor localization faces many challenges from physical to logistical. Our research team is focused on trying to improve this technology and enable low-cost yet scalable and effective indoor tracking. Our hope is that our solution focused on Bluetooth Low-Energy iBeacons will be the answer.</p>
+<hr>
+
+<div class="narrow-content markdown">
+# About
+The iBeacon Indoor Localization Project is a research project that has emerged from a research team at NC State University. It has evolved significantly over the years. The team is led by Dr. Michael Devetsikiotis and funded by IBM. Currently, there are two main members of the team: myself and Mahdi Inaya, a Master's student in ECE at NC State. We work together to lead the research effort.
+
+Indoor localization has been a hot topic in recent years (see below for some potential applications). However, there are many issues with implementing it. The cheapest solution has tended to be using existing Wi-Fi access points and networks to approximate distance. However, the issue with this is that you require a large number of access points to be effective, especially if you hope for the solution to be scalable. More expensive solutions involve low frequency waves, but this is more costly.
+
+Currently, we are investigating the use of Bluetooth Low-Energy iBeacons with indoor localization. The devices can communicate with a Bluetooth scanning device with their identifying information (i.e., a UUID). When the communications are received by the device, it can use the received signal strength indicator (rssi) value as input to an equation to approximate distance.
+
+# Solution
+Our solution is to use **Bluetooth Low-Energy (BLE) iBeacons** with **Raspberry Pi** nodes. The Pis, running **asynchronous Node.js** software, are able to detect these beacons and report their sightings to a server via an **Mosquitto MQTT** broker. A **multi-threaded Python client** runs on the server that retrieves this data from the MQTT broker and then stores it into a **MariaDB SQL database**.
+
+In addition to this, we also have some supporting infrastructure. I established a **Flask web server** that enables the creation of **REST API endpoints** and a **website** via a **Python backend**. The API endpoints are used to quickly access information from the database. The website is used to display information about the health of our system and to notify us via email if something goes wrong. The website heavily relies on the use of **Bootstrap** and **jQuery** and utilizes **AJAX** queries to communicate with the backend. 
+
+### Scalability
+This solution is intended to be highly scalable. Whether you are tracking a few iBeacons or hundreds, this system will remain resilient. The Node.js code on the Raspberry Pi's exhibit a high degree of asynchronous execution, and the use of the MQTT broker allows for the multi-threaded Python client to quickly and efficiently load-balance and handle the data, even in periods of extremely high activity. In addition, adding more Raspberry Pi's (to allow for more accurate tracking or tracking in new locations) is simply a matter of powering up a new Pi with an SD card loaded with our image.
+
+# Applications
+With just one device, you are able to estimate how far an iBeacon is from the device. This will enable a large number of technologies in the future. For example, consider the application in smart buildings, where proximity can be used to determine what rooms people are in and thus adjust the lights. Or, perhaps a museum wishes to establish interactive exhibits where displays will show certain information depending on what path the person has taken through the museum. Even consider the application where a supermarket integrates this technology and can provide targeted advertising to people based on what aisle they are in or what aisles they will future soon.
+
+# Future
+At time of writing (early September 2016), we have finished the implementation of our solution. The research project is still on-going, of course. Beginning around mid-September we will initiate a month-long study where we will give students at NC State some iBeacons. They will attach these beacons to their backpacks and then carry on their normal schedule. The study will consist of 100 students and 30 Raspberry Pi nodes spread throughout Engineering Building II. During this month, we will have our Raspberry Pi's monitoring the beacons and collecting a massive amount of localization information. After the study is complete, we will begin analyzing the data and looking for potential applications.
+</div>
