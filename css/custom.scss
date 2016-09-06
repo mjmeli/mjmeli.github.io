@@ -11,6 +11,10 @@ p {
     margin-bottom: 15px !important;
 }
 
+li {
+    font-size: 17px;
+}
+
 .navbar-custom {
     background-color: $grey-color-dark;
     color: $wolfpack-white;
@@ -448,7 +452,7 @@ hr {
     width: 250px;
 }
 
-.visible-mobile-only {
+.visible-nonmobile-only {
     display: none;
 
     @media screen and (min-width: 768px) {

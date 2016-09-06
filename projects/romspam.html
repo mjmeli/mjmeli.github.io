@@ -7,6 +7,51 @@ permalink: /projects/romspam/
 return_div: romspam
 title: romspam
 description: Valentine's Day project involving spamming sappy posts over social media
+github: https://github.com/mjmeli/romspam
 ---
 <h1 class="text-center" style="margin-top: 0px">romspam</h1>
-<p class="lead text-center project-page-lead">Under construction</p>
+<p class="lead text-center project-page-lead">What better way to show your affection for someone than to barage them with romantic quotes on social media? On Valentine's Day, make sure your significant other knows how much you care about them by flooding their phone with annoyingly sappy notifications.</p>
+<hr>
+
+<div class="project-page-quicklinks">
+    <div class="row text-center long-text">
+        <div class="narrow-content">
+            <div class="col-sm-6">
+                <img src="/assets/logos/github_mark.png" class="social-image" alt="GitHub Logo"/>
+                <p class=lead><a href="https://github.com/mjmeli/romspam" target="_blank" class="btn btn-outline btn-lg">View Code on GitHub</a></p>
+            </div>
+            <div class="col-sm-6">
+                <img src="https://travis-ci.org/mjmeli/romspam.svg?branch=master" class="social-image" alt="TravisCI Build Status" style="max-width: 200px"/>
+                <p class=lead><a href="https://travis-ci.org/mjmeli/romspam" target="_blank" class="btn btn-outline btn-lg">View Build on Travis CI</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="markdown narrow-content">
+# About
+As Valentine's Day approached in 2016, I wanted to do something nice for my girlfriend. However, as a cheap college student, I also didn't want to do anything too expensive. Since my girlfriend is a computer science student, I thought of making some sort of programming project that she would appreciate. Ultimately, I decided on making `romspam`.
+
+The idea for it was initially a joke. *What if I spam her with a Python script to show her how much I love her?* Sounds like a dumb idea, but as I thought it out, I realized that this was actually something she would appreciate.
+
+The end result was `romspam`. This is a straightforward project and nothing remarkable. It's a Python package that can be installed using `pip`. You can configure the application with your OAuth credentials for Twitter (I had planned to use other social media services, but ran out of time) and then encrypt them using a password and AES-256 encryption. Finally, you can specify a set of images to attach to your tweets.
+
+# Features
+The above section summarizes the features, but essentially:
+* Python package that can be uploaded to PyPi (although I did not)
+* Unit testing suite using `nose` and `mock`
+* Security conscious by encrypting sensitive credentials with AES-256
+* Hooks into the Twitter REST API with OAuth2 authentication
+* TravisCI integration for build status reporting
+
+# Outcome
+I am happy to save that she **LOVED** it!
+
+While a stupid idea, she knew that I spend many hours working on it when I should have been working on homework and projects. I would tell her I needed to work on her "present" and her face would light up in anticipation.
+
+I wish I had taken a photo of the smile on her face when her phone lit up with her first tweet. For most of the day, she would keep track of the time and constantly refresh her Twitter feed when a new tweet was about to post.
+
+Perhaps her favorite feature was the images. I pulled together all of my favorite images together and she loved every single one. Some quotes matched perfectly with the selected picture, which I thought was fantastic.
+
+The quotes really came out as secondary in the process; the real romance was the effort I put in. While this is not a "typical" Valentine's Day gift, this is one that she cherished and we will remember forever.
+</div>
