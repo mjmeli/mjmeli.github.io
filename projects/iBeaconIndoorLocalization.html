@@ -19,15 +19,41 @@ The iBeacon Indoor Localization Project is a research project that has emerged f
 Indoor localization has been a hot topic in recent years (see below for some potential applications). However, there are many issues with implementing it. The cheapest solution has tended to be using existing Wi-Fi access points and networks to approximate distance. However, the issue with this is that you require a large number of access points to be effective, especially if you hope for the solution to be scalable. More expensive solutions involve low frequency waves, but this is more costly.
 
 Currently, we are investigating the use of Bluetooth Low-Energy iBeacons with indoor localization. The devices can communicate with a Bluetooth scanning device with their identifying information (i.e., a UUID). When the communications are received by the device, it can use the received signal strength indicator (rssi) value as input to an equation to approximate distance.
+</div>
 
+<div class="project-page-images">
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="/assets/projects/ibeacon/beacon.jpg" class="project-image img-responsive" />
+            <p>The Gimbal Beacon that is used as an iBeacon for location tracking</p>
+        </div>
+        <div class="col-sm-6">
+            <img src="/assets/projects/blank.jpg" class="project-image img-responsive" />
+            <p>Raspberry Pi nodes are attached to the walls throughout EB II</p>
+        </div>
+    </div>
+</div>
+
+<div class="narrow-content markdown">
 # Solution
 Our solution is to use **Bluetooth Low-Energy (BLE) iBeacons** with **Raspberry Pi** nodes. The Pis, running **asynchronous Node.js** software, are able to detect these beacons and report their sightings to a server via an **Mosquitto MQTT** broker. A **multi-threaded Python client** runs on the server that retrieves this data from the MQTT broker and then stores it into a **MariaDB SQL database**.
 
-In addition to this, we also have some supporting infrastructure. I established a **Flask web server** that enables the creation of **REST API endpoints** and a **website** via a **Python backend**. The API endpoints are used to quickly access information from the database. The website is used to display information about the health of our system and to notify us via email if something goes wrong. The website heavily relies on the use of **Bootstrap** and **jQuery** and utilizes **AJAX** queries to communicate with the backend. 
+In addition to this, we also have some supporting infrastructure. I established a **Flask web server** that enables the creation of **REST API endpoints** and a **website** via a **Python backend**. The API endpoints are used to quickly access information from the database. The website is used to display information about the health of our system and to notify us via email if something goes wrong. The website heavily relies on the use of **Bootstrap** and **jQuery** and utilizes **AJAX** queries to communicate with the backend.
 
 ### Scalability
 This solution is intended to be highly scalable. Whether you are tracking a few iBeacons or hundreds, this system will remain resilient. The Node.js code on the Raspberry Pi's exhibit a high degree of asynchronous execution, and the use of the MQTT broker allows for the multi-threaded Python client to quickly and efficiently load-balance and handle the data, even in periods of extremely high activity. In addition, adding more Raspberry Pi's (to allow for more accurate tracking or tracking in new locations) is simply a matter of powering up a new Pi with an SD card loaded with our image.
+</div>
 
+<div class="project-page-images">
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="/assets/projects/ibeacon/rpistatus2.png" class="project-image" alt="Raspberry Pi Status Page"/>
+            <p>Our website shows the status of each Raspberry Pi using a heartbeat protocol</p>
+        </div>
+    </div>
+</div>
+
+<div class="narrow-content markdown">
 # Applications
 With just one device, you are able to estimate how far an iBeacon is from the device. This will enable a large number of technologies in the future. For example, consider the application in smart buildings, where proximity can be used to determine what rooms people are in and thus adjust the lights. Or, perhaps a museum wishes to establish interactive exhibits where displays will show certain information depending on what path the person has taken through the museum. Even consider the application where a supermarket integrates this technology and can provide targeted advertising to people based on what aisle they are in or what aisles they will future soon.
 
