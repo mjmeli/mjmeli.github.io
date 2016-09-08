@@ -12,11 +12,11 @@ description: View and download my resume in either PDF or Word .docx format.
     <div class="row text-center">
         <div class="col-sm-4">
             <h3>PDF Format</h3>
-            <p class=lead><a onclick="window.open('https://drive.google.com/uc?export=download&id=0B6KIgoS85_SMVGRaOE0tZDRGRTQ')" class="btn btn-outline btn-lg">Download</a></p>
+            <p class=lead><a onclick="trackResumeDownload('pdf');window.open('https://drive.google.com/uc?export=download&id=0B6KIgoS85_SMVGRaOE0tZDRGRTQ')" class="btn btn-outline btn-lg">Download</a></p>
         </div>
         <div class="col-sm-4">
             <h3>Word .docx Format</h3>
-            <p class=lead><a onclick="window.open('https://drive.google.com/uc?export=download&id=0B6KIgoS85_SMUXhkd1RkQlhNb0U')" class="btn btn-outline btn-lg">Download</a></p>
+            <p class=lead><a onclick="trackResumeDownload('docx');window.open('https://drive.google.com/uc?export=download&id=0B6KIgoS85_SMUXhkd1RkQlhNb0U')" class="btn btn-outline btn-lg">Download</a></p>
         </div>
         <div class="col-sm-4">
             <h3>Other Format?</h3>
@@ -42,4 +42,12 @@ description: View and download my resume in either PDF or Word .docx format.
     }
     $(window).resize(resizeiFrame);
     $(document).ready(resizeiFrame);
+</script>
+
+<script>
+    // Track clicks on resume download links
+    function trackResumeDownload(type) {
+        if (type != 'pdf' && type != 'docx') return;
+        ga('send', 'event', 'Resume', 'download', type);
+    }
 </script>
