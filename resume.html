@@ -28,7 +28,18 @@ description: View and download my resume in either PDF or Word .docx format.
     <h1>View Resume</h1>
     <p class="lead">The viewer below shows the most up-to-date version of my resume:</p>
 
-    <iframe src="https://docs.google.com/viewer?srcid=0B6KIgoS85_SMVGRaOE0tZDRGRTQ&pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="100%" height="1125px">PDF view is not supported on mobile. Try a download link or use a desktop.</iframe>
+    <iframe id="resume-iframe" src="https://docs.google.com/viewer?srcid=0B6KIgoS85_SMVGRaOE0tZDRGRTQ&pid=explorer&efh=false&a=v&chrome=false&embedded=true">PDF view is not supported on this device or browser. Try a download link or use a different device or browser.</iframe>
 
     <!-- <object type="application/pdf" data="https://docs.google.com/viewer?srcid=0B6KIgoS85_SMVGRaOE0tZDRGRTQ&pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="100%" height="1200">PDF view is not supported on mobile. Try a download link or use a desktop.</object> -->
 </div>
+
+<script>
+    // Code to resize the height of the PDF iFrame depending on width
+    function resizeiFrame() {
+        var iframeWidth = $('#resume-iframe').width()
+        var iframeHeight = iframeWidth * 1150 / 840;  // ideal dimensions
+        $('#resume-iframe').css('height', iframeHeight);
+    }
+    $(window).resize(resizeiFrame);
+    $(document).ready(resizeiFrame);
+</script>
