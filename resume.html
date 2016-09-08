@@ -50,4 +50,7 @@ description: View and download my resume in either PDF or Word .docx format.
         if (type != 'pdf' && type != 'docx') return;
         ga('send', 'event', 'Resume', 'download', type);
     }
+
+    // Track viewing of resume page specifically
+    ga('send', 'event', 'Resume', 'view');
 </script>
