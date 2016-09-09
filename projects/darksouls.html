@@ -7,6 +7,102 @@ permalink: /projects/darksouls/
 return_div: darksouls
 title: Dark Souls Save Backup
 description: A program for automating save backups in the Dark Souls video game series
+github: https://github.com/mjmeli/DarkSoulsSaveBackup
 ---
 <h1 class="text-center" style="margin-top: 0px">Dark Souls Save Backup</h1>
-<p class="lead text-center project-page-lead">Under construction</p>
+<p class="lead text-center project-page-lead">There are few things worse than playing a difficult video game for hours, days, weeks, or months, and then due to an unfortunate event, you lose all progress and have to start again. The Dark Souls series suffers heavily from this because saves are not synced to the cloud. My solution was to produce a program that automatically handled backup and restoration of save files.</p>
+<hr>
+
+<div class="project-page-quicklinks">
+    <div class="row text-center long-text">
+        <div class="narrow-content">
+            <div class="col-sm-6">
+                <img src="/assets/logos/nexus_logo.png" class="social-image"/>
+                <p class=lead><a href="http://www.nexusmods.com/darksouls2/mods/280/?" target="_blank" class="btn btn-outline btn-lg">View on Dark Souls Nexus</a></p>
+            </div>
+            <div class="col-sm-6">
+                <img src="/assets/logos/github_mark.png" class="social-image" alt="GitHub Logo"/>
+                <p class=lead><a href="https://github.com/mjmeli/DarkSoulsSaveBackup" target="_blank" class="btn btn-outline btn-lg">View (Old) Code on GitHub</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="half-hr">
+<div class="narrow-content text-center">
+    <div class="row" style="font-size: 28px">
+        <div class="col-sm-3">64</div>
+        <div class="col-sm-3">892</div>
+        <div class="col-sm-3">1,954</div>
+        <div class="col-sm-3">16,600+</div>
+    </div>
+    <div class="row" style="font-size: 17px">
+        <div class="col-sm-3">Endorsements</div>
+        <div class="col-sm-3">Unique Downloads</div>
+        <div class="col-sm-3">Total Downloads</div>
+        <div class="col-sm-3">Views</div>
+    </div>
+</div>
+<hr class="half-hr">
+
+<div class="markdown narrow-content">
+# Background
+In the recent past, most games would save your progress locally. Generally, this was in the form of save files. With the rise of "the cloud" and the increasingly heavy usage of gaming platforms like Steam, more and more games are starting to sync your progress with the cloud. While you may still have progress stored locally, generally speaking, the master copy of your progress will be stored online somewhere.
+
+The Dark Souls series are some of those games that haven't adopted this idea yet. Your progress is saved locally to a single file. This file contains no versioning or history information; when a change is written to it, then there is no going back.
+
+This isn't necessarily a bad thing. However, a quick Google search for something like "dark souls corrupted save" reveals thousands of results. With a single file, there is a higher likelihood of failure.
+
+This issue resurfaced with the release of Dark Souls 3. This article from [Kotaku](http://kotaku.com/dark-souls-3-pc-has-a-massive-cheating-problem-1773660707) explains about the hacking problem in the game. Hackers would create hacked or glitched items and gift them to unsuspecting players. The game would then do an integrity check and see these hacked items and ban the player until the save was fixed.
+
+Of course, there is no way to actually fix the save. The only solution is to delete it and start again (which is an abhorrent suggestion in a difficult and length game like Dark Souls), or restore an old backup.
+
+How do you get a backup save? Since the game is not running on the cloud, you need to be actively doing this. Thus, the idea for Dark Souls Save Backup came to me.
+</div>
+
+<div class="project-page-images">
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="/assets/projects/darksouls/2.png" class="project-image"/>
+            <p></p>
+        </div>
+    </div>
+</div>
+
+<div class="markdown narrow-content">
+# About
+There were various "solutions" for backing up files. Some people suggested using Window's built in file versioning (which never work correctly for me). Others suggest uploading the files constantly to Dropbox with some scripts. Others wrote hard-to-use command line scripts to do backups.
+
+I thought: why not a simple GUI?
+
+I created a **Windows Form** application in **C#**. The application has various useful features:
+* Works with all Dark Souls games
+* GUI
+* Automatic save directory detection
+* Customizable backup frequency (in minutes)
+* Backup file size tracking
+* Easy way to manually clear out all existing backups
+* Optional automatic cleanup of old backups (in terms of number of backups kept - option to keep under a file size coming soon)
+* Support for multiple save files
+* Instant backup option when you need a quick backup
+* Instant restore option, which will replace your saves with your most recent backups
+
+Many of these features are extremely useful. For example, most applications require you to specify exactly where your Dark Souls save file is. This turns out to be a very non-intuitive location. My application automatically searches your file system for it. The application also includes backup file size tracking, which makes sure you aren't storing gigabytes of old backups on your system. Another very useful feature I used often was the instant restore feature, where the latest backup would be restored at the click of a button.
+</div>
+
+<div class="project-page-images">
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="/assets/projects/darksouls/1.png" class="project-image"/>
+            <p></p>
+        </div>
+    </div>
+</div>
+
+<div class="markdown narrow-content">
+# Code
+The GitHub links on this page point to an old version of my software. I have since refactored it and added more functionality, but I don't have that pushed to GitHub yet. Hopefully that will get done soon.
+
+# Reception
+I posted the application to Nexus Mods, the de facto source for Dark Souls mods and utilities. Since posting, it has received almost 2,000 downloads and has been viewed over 16,000 times. I originally created the application for myself and didn't expect anyone else to find it useful, so it pleases me greatly that so many people also used it.
+</div>
