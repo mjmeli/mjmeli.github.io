@@ -6,7 +6,7 @@ html {
   overflow-y: scroll;
 }
 
-p {
+body > p {
     font-size: 17px;
     margin-bottom: 15px !important;
 }
@@ -27,6 +27,9 @@ p.lead {
     border: 0;
   	border-radius: 0 !important;
     margin-bottom: 1px !important;
+    li {
+        font-size: 16px;
+    }
 }
 
 .navbar-custom .navbar-nav > li > a {
@@ -58,19 +61,6 @@ p.lead {
         padding-left: 30px;
     }
 }
-
-// Shrink text when the nav bar links drop to lower line before collapsing
-@media screen and (min-width: 768px) and (max-width: 825px) {
-    .navbar-custom .navbar-brand {
-        font-size: 18px;
-        padding-left: 20px;
-    }
-
-    .navbar-custom .navbar-nav > li > a {
-        font-size: 13px;
-    }
-}
-
 
 .navbar-custom .navbar-toggle {
     background-color: #eeeeee;
