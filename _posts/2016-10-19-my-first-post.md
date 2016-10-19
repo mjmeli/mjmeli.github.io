@@ -8,6 +8,7 @@ categories: jekyll update
 Hey everyone! Welcome to my blog! It's a bit bare right now, but I plan to add lots of interesting information in the coming days.
 
 Be on the lookout for:
+
 * Programming WS2812 LEDs using an TI MSP430
 * Creating word clouds from Facebook comments
 * Using an Arduino and AD5933 to measure impedance
