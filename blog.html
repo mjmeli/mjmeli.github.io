@@ -1,0 +1,18 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+order: 9
+description: Where I sometimes write helpful information
+---
+<p class="lead text-center page-lead">Welcome to my blog! Look into my posts to find out more about me, my work, and my interests. </p>
+<hr>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
