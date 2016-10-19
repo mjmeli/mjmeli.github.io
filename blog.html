@@ -1,18 +1,22 @@
 ---
-layout: page
+layout: blog
 title: Blog
 permalink: /blog/
 order: 9
-description: Where I sometimes write helpful information
 ---
-<p class="lead text-center page-lead">Welcome to my blog! Look into my posts to find out more about me, my work, and my interests. </p>
-<hr>
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>
+<div class="container-fluid page-content-custom">
+    <div class="fixed-width-content">
+      <p class="lead text-center page-lead">Welcome to my blog! Look into my posts to find out more about me, my work, and my interests. Many of the posts here relate to the projects that I have worked on.</p>
+      <hr>
+
+      <ul>
+        {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            {{ post.excerpt }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+</div>
