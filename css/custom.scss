@@ -526,3 +526,12 @@ hr {
 #resume-iframe {
     width: 100%;
 }
+
+code {
+    background-color: $wolfpack-off-white !important;
+    color: $wolfpack-red !important;
+}
+
+.highlighter-rouge .highlight {
+  background: $wolfpack-off-white !important;
+}
