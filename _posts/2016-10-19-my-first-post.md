@@ -4,6 +4,7 @@ title:  Welcome to my blog!
 date:   2016-10-19
 author: Michael Meli
 categories: jekyll update
+tags: meta
 ---
 Hey everyone! Welcome to my blog! It's a bit bare right now, but I plan to add lots of interesting information in the coming days.
 

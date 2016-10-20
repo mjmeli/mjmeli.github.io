@@ -4,7 +4,7 @@ title:  Register Allocation via Graph Coloring
 date:   2016-10-20
 author: Michael Meli
 categories: algorithms
-tags: [register, allocation, graph, problem, coloring, theory, compiler, optimization, time, complexity, NP, P, NP-hard, NP-complete, approximation, heuristic, algorithm]
+tags: [graph-problem, algorithms]
 ---
 Optimizing compilers can generally be broken up into various stages: the front-end, the optimizer, and the back-end. The back-end is a vital element of the compiler as it translates the intermediate representation (IR) of the source program into machine-specific form in a process known as code generation. A major part of code generation is **register allocation**, which can be realized by determining a **approximating heuristic solution** to the **graph coloring problem**.
 
