@@ -10,14 +10,16 @@ order: 9
       <p class="lead text-center page-lead">Welcome to my blog! Look into my posts to find out more about me, my work, and my interests. Many of the posts here relate to the projects that I have worked on.</p>
       <hr>
 
-      <ul>
-        {% for post in site.posts %}
-          <li>
-            <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
-            <h4><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></h4>
-            {{ post.excerpt }}
-          </li>
-        {% endfor %}
-      </ul>
+      <div class="narrow-content">
+        <ul class="list-unstyled">
+          {% for post in site.posts %}
+            <li class="blog-post">
+              <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+              <h4><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></h4>
+              {{ post.excerpt }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
 </div>
