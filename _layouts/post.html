@@ -17,7 +17,7 @@ layout: blog
               <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
               <p class="post-meta">
                   Tags: {% for tag in page.tags %}
-                            <a href="/tags#{{ tag }}" class="tag">{{ tag }}</a>
+                            <a href="/blog/tags#{{ tag }}" class="tag">{{ tag }}</a>
                         {% endfor %}
               </p><br/>
           </header>
@@ -25,7 +25,7 @@ layout: blog
 
           <h3>Tags</h3>
             {% for tag in page.tags %}
-                <a href="/tags#{{ tag }}" class="tag">{{ tag }}</a>
+                <a href="/blog/tags#{{ tag }}" class="tag">{{ tag }}</a>
             {% endfor %}
       </div>
     </article>
