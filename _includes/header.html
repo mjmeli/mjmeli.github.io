@@ -18,10 +18,8 @@
                         {% else %}
                             {% if my_page.title == "Projects" and page.page_type == "project"%}
                                 <li class="active"><a href="{{my_page.url}}" class="active">{{my_page.title}}</a></li>
-                            {% else %}
-                                {% if my_page.navbar_hide != true %}
-                                    <li><a href="{{my_page.url}}">{{my_page.title}}</a></li>
-                                {% endif %}
+                            {% elsif my_page.navbar_hide != true %}
+                                <li><a href="{{my_page.url}}">{{my_page.title}}</a></li>
                             {% endif %}
                         {% endif %}
                     {% endif %}
