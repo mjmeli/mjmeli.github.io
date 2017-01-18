@@ -344,6 +344,15 @@ hr {
     margin-top: 15px;
     .btn {
       font-size: 16px;
+      @media screen and (max-width: 768px) {
+        margin-bottom: 10px;
+      }
+    }
+}
+
+.rwd-break {
+    @media screen and (min-width: 768px) {
+      display: none;
     }
 }
 
