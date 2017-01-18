@@ -336,6 +336,17 @@ hr {
     }
 }
 
+.experience-current {
+    border-left: 10px solid $success-color;
+    background-color: rgba($success-color, 0.2);
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .btn {
+      font-size: 16px;
+    }
+}
+
 .nav-tabs {
     @media screen and (max-width: 768px) {
         margin-left: 0px;
