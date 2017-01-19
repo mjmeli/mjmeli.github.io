@@ -348,6 +348,10 @@ hr {
         margin-bottom: 10px;
       }
     }
+    .btn[disabled] {
+        cursor: default;
+        opacity: 1;
+    }
 }
 
 .rwd-break {
