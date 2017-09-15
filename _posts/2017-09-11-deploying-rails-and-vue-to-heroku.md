@@ -107,10 +107,10 @@ Navigate to your back-end and create a new branch.
 
 Now, commit the front-end files in this new branch.
 
-    $ git add --all
+    $ git add public
     $ git commit -m "deploy"
 
-We are going to now do a push to Heroku to kick off the deployment process. Note that we must do a couple of modifications to our `git push` command to make this work. First of all, we want to use the `-f` flag to force push to the repo. If we didn't do this, then this process would not work as we are not committing the front-end files to the actual repo; this would cause the `git` history of the two repos to diverge and cause a whole bunch of problems, so we just obliterate the Heroku repo each time as we do not care about its history. Next, we want to push to the Heroku `master` branch, but we are not on the `master` branch ourselves; as such, we will need to explicitly map this branch to the remote `master` branch. All in all, this command will suffice:
+We are going to now do a push to Heroku to kick off the deployment process. Note that we must do a couple of modifications to our `git push` command to make this work. First of all, we want to use the `-f` flag to force push to the repo. If we didn't do this, then we may run into issues in later deployments as the `git` histories may diverge, so to avoid that we just obliterate the Heroku repo each time as we do not care about its history. Next, we want to push to the Heroku `master` branch, but we are not on the `master` branch ourselves; as such, we will need to explicitly map this branch to the remote `master` branch. All in all, this command will suffice:
 
     $ git push -f heroku heroku-deploy:master
 
@@ -130,7 +130,7 @@ Awesome! That's it! You can now navigate to your application and everything shou
 Just run through this process again to deploy subsequent times.
 
 ### Scripting the Deployment
-This process have a bunch of commands to type out to its a prime candidate for scripting. I wrote a script to do so in my front-end repo. You can see it [here](https://github.com/mjmeli/whodecidesfood-app/blob/master/heroku-deploy.sh). You'll notice it follows the same flow as this tutorial.
+This process has a bunch of commands to type out that do not differ between deployments so its a prime candidate for scripting. I wrote a script to do so in my front-end repo. You can see it [here](https://github.com/mjmeli/whodecidesfood-app/blob/master/heroku-deploy.sh). You'll notice it follows the same flow as this tutorial.
 
 ### Additional Resources
 If you have any problems deploying the Rails app to Heroku, please see the [official documentation](https://devcenter.heroku.com/articles/getting-started-with-rails5) for more detailed instructions.
