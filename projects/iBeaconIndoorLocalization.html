@@ -21,14 +21,14 @@ Indoor localization has been a hot topic in recent years (see below for some pot
 Currently, we are investigating the use of Bluetooth Low-Energy iBeacons with indoor localization. The devices can communicate with a Bluetooth scanning device with their identifying information (i.e., a UUID). When the communications are received by the device, it can use the received signal strength indicator (rssi) value as input to an equation to approximate distance.
 </div>
 
-<div class="project-page-images">
+<div class="content-page-images">
     <div class="row">
         <div class="col-sm-6">
-            <img src="/assets/projects/ibeacon/beacon.jpg" class="project-image img-responsive" />
+            <img src="/assets/projects/ibeacon/beacon.jpg" class="content-image-border img-responsive" />
             <p>The Gimbal Beacon that is used as an iBeacon for location tracking</p>
         </div>
         <div class="col-sm-6">
-            <img src="/assets/projects/ibeacon/rpi.jpg" class="project-image img-responsive" />
+            <img src="/assets/projects/ibeacon/rpi.jpg" class="content-image-border img-responsive" />
             <p>Raspberry Pi nodes are attached to the walls throughout EB II</p>
         </div>
     </div>
@@ -44,10 +44,10 @@ In addition to this, we also have some supporting infrastructure. I established 
 This solution is intended to be highly scalable. Whether you are tracking a few iBeacons or hundreds, this system will remain resilient. The Node.js code on the Raspberry Pi's exhibit a high degree of asynchronous execution, and the use of the MQTT broker allows for the multi-threaded Python client to quickly and efficiently load-balance and handle the data, even in periods of extremely high activity. In addition, adding more Raspberry Pi's (to allow for more accurate tracking or tracking in new locations) is simply a matter of powering up a new Pi with an SD card loaded with our image.
 </div>
 
-<div class="project-page-images">
+<div class="content-page-images">
     <div class="row">
         <div class="col-sm-12">
-            <img src="/assets/projects/ibeacon/rpistatus2.png" class="project-image" alt="Raspberry Pi Status Page"/>
+            <img src="/assets/projects/ibeacon/rpistatus2.png" class="content-image-border" alt="Raspberry Pi Status Page"/>
             <p>Our website shows the status of each Raspberry Pi using a heartbeat protocol</p>
         </div>
     </div>
