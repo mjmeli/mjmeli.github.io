@@ -11,7 +11,7 @@ email: me@michaelmeli.com
 description: > # this means to ignore newlines until "baseurl:"
   Meet Michael Meli
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.michaelmeli.com" # the base hostname & protocol for your site
+url: "https://michaelmeli.com" # the base hostname & protocol for your site
 github_username:  mjmeli
 include: ['projects']
 
