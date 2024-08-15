@@ -1,0 +1,8 @@
+@import "variables";
+
+// Not the best to override with !important but its the easiest approach with Bootstrap 3
+
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+    background-color: $theme-primary-med-light !important;
+    border-color: darken($theme-primary-med-light, 3%) !important;
+}

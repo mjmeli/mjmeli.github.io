@@ -1,6 +1,7 @@
 ---
 ---
 @import "variables";
+@import "bootstrap-overrides";
 
 html {
   overflow-y: scroll;
@@ -23,7 +24,7 @@ p.lead {
 
 .navbar-custom {
     background-color: $grey-color-dark;
-    color: $wolfpack-white;
+    color: $theme-white;
     border: 0;
   	border-radius: 0 !important;
     margin-bottom: 1px !important;
@@ -38,7 +39,7 @@ p.lead {
 
 .navbar-custom {
     .navbar-nav > .active > a {
-        color: $wolfpack-white;
+        color: $theme-white;
         background-color: $grey-color;
     }
 
@@ -47,8 +48,8 @@ p.lead {
     .navbar-nav > .active > a:hover,
     .navbar-nav > .active > a:focus {
         text-decoration: none;
-        color: $wolfpack-white;
-        background-color: $wolfpack-red-dark;
+        color: $theme-white;
+        background-color: $theme-primary-dark;
     }
 }
 
@@ -66,28 +67,28 @@ p.lead {
     background-color: #eeeeee;
 }
 .navbar-custom .icon-bar {
-    background-color: $wolfpack-red-dark;
+    background-color: $theme-primary-dark;
 }
 
-.red-bg {
-    background-color: $wolfpack-red-dark;
-    color: $wolfpack-white;
+.color-bg {
+    background-color: $theme-primary-dark;
+    color: $theme-white;
 }
 
-.red-bg-fade {
-    background-color: $wolfpack-red-dark;
-    color: $wolfpack-white;
-    background-image: linear-gradient(to bottom, darken($wolfpack-red-dark, 2%), lighten($wolfpack-red-dark, 2%));
+.color-bg-fade {
+    background-color: $theme-primary-dark;
+    color: $theme-white;
+    background-image: linear-gradient(to bottom, darken($theme-primary-dark, 2%), lighten($theme-primary-dark, 2%));
 }
 
 .white-bg {
-    background-color: $wolfpack-white;
+    background-color: $theme-white;
     color: $grey-color-dark;
 }
 
 .grey-bg {
     background-color: $grey-color-dark;
-    color: $wolfpack-off-white;
+    color: $theme-off-white;
 }
 
 .masthead {
@@ -106,23 +107,23 @@ p.lead {
     }
 
     .btn-outline-inverse {
-      color: $wolfpack-white;
+      color: $theme-white;
       background-color: transparent;
       border-style: solid;
       border-width: 2px;
-      border-color: $wolfpack-white;
+      border-color: $theme-white;
     }
 
     .btn-outline-inverse:hover,
     .btn-outline-inverse:focus,
     .btn-outline-inverse:active {
-      color: $wolfpack-red-dark;
-      background-color: $wolfpack-white;
-      border-color: $wolfpack-white;
+      color: $theme-primary-dark;
+      background-color: $theme-white;
+      border-color: $theme-white;
     }
 
     .code-inverse {
-        color: $wolfpack-white !important;
+        color: $theme-white !important;
         background-color: transparent !important;
         border-width: 0px;
         margin-left: 5px;
@@ -137,7 +138,7 @@ p.lead {
     height: 300px;
     border-style: solid;
     border-width: 2px;
-    border-color: $wolfpack-white;
+    border-color: $theme-white;
     margin-top:15px;
     margin-bottom:10px;
 }
@@ -193,17 +194,17 @@ hr {
     }
 
     .btn-outline {
-      color: $wolfpack-off-white;
+      color: $theme-off-white;
       background-color: $grey-color-dark;
       border-style: solid;
       border-width: 2px;
-      border-color: $wolfpack-off-white;
+      border-color: $theme-off-white;
     }
 
     .btn-outline:hover {
       color: $grey-color-dark;
-      background-color: $wolfpack-off-white;
-      border-color: $wolfpack-off-white;
+      background-color: $theme-off-white;
+      border-color: $theme-off-white;
     }
 }
 
@@ -254,7 +255,7 @@ hr {
         font-weight: 300;
         line-height: 1.4;
         font-size: 20px;
-        color: $wolfpack-off-white;
+        color: $theme-off-white;
     }
 }
 
@@ -275,17 +276,17 @@ hr {
 
     .btn-outline,
     .btn-outline:focus {
-      color: $wolfpack-red-dark;
-      background-color: $wolfpack-white;
+      color: $theme-primary-med-dark;
+      background-color: $theme-white;
       border-style: solid;
       border-width: 2px;
-      border-color: $wolfpack-red-dark;
+      border-color: $theme-primary-med-dark;
     }
 
     .btn-outline:hover {
-      color: $wolfpack-white;
-      background-color: $wolfpack-red-dark;
-      border-color: $wolfpack-red-dark;
+      color: $theme-white;
+      background-color: $theme-primary-med-dark;
+      border-color: $theme-primary-med-dark;
     }
 }
 
@@ -337,8 +338,8 @@ hr {
 }
 
 .experience-current {
-    border-left: 10px solid $success-color;
-    background-color: rgba($success-color, 0.2);
+    border-left: 10px solid $theme-primary-med-light;
+    background-color: rgba($theme-primary, 0.2);
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 15px;
@@ -421,11 +422,11 @@ hr {
 
 .dark-wide-link {
     background-color: $grey-color-dark;
-    color: $wolfpack-off-white;
+    color: $theme-off-white;
 
     a:hover,
     a:focus {
-        color: $wolfpack-off-white;
+        color: $theme-off-white;
         text-decoration: none;
     }
 
@@ -437,7 +438,7 @@ hr {
         margin: 15px;
         padding-top: 0px;
         padding-bottom: 0px;
-        color: $wolfpack-off-white;
+        color: $theme-off-white;
     }
 
     .btn-outline {
@@ -447,7 +448,7 @@ hr {
     }
 
     .btn-outline:hover {
-        border-color: $wolfpack-off-white;
+        border-color: $theme-off-white;
     }
 }
 
@@ -564,16 +565,16 @@ hr {
 }
 
 code {
-    background-color: $wolfpack-off-white !important;
-    color: $wolfpack-red !important;
+    background-color: $theme-off-white !important;
+    color: $theme-primary-dark !important;
 }
 
 .highlighter-rouge .highlight {
-  background: $wolfpack-off-white !important;
+  background: $theme-off-white !important;
 }
 
 .tag {
-    background-color: $wolfpack-off-white;
+    background-color: $theme-off-white;
     padding: 7px;
 }
 

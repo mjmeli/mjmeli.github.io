@@ -1,11 +1,14 @@
 $grey-color:       #666666;
 $grey-color-light: #CCCCCC;
 $grey-color-dark:  #333333;
-$wolfpack-red: #CC0000;
-$wolfpack-red-dark: #AA0000;
-$wolfpack-white: #FFFFFF;
-$wolfpack-black: #000000;
-$wolfpack-off-white: darken($wolfpack-white, 5%);
+$theme-primary: #518c74;
+$theme-primary-med-dark: darken($theme-primary, 5%);
+$theme-primary-dark: darken($theme-primary, 10%);
+$theme-primary-med-light: lighten($theme-primary, 5%);
+$theme-primary-light: lighten($theme-primary, 10%);
+$theme-white: #FFFFFF;
+$theme-black: #000000;
+$theme-off-white: darken($theme-white, 5%);
 
 $success-color: #5cb85c;
 $primary-color: #428bca;
