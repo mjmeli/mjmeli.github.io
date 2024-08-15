@@ -115,8 +115,10 @@ The real-time usage is provided via an MQTT connection, and must be heartbeated 
 
 ### Python Client Library
 Using this knowledge, I then built a client library in Python to wrap the API functionality.
-A key tenet of Home Assistant integrations is that any potentially common code should exist outside the integration so other community members can use it.
-As such, I built a separate package for this.
+
+<p class="featured-colored-text">
+    A key tenet of Home Assistant integrations is that any reusable code, such as client libraries, should exist outside the integration so open-source developers outside of Home Assistant can use it.
+</p>
 
 I used a few major libraries within my library:
 

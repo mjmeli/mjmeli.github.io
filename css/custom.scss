@@ -331,6 +331,11 @@ hr {
     background-color: rgba($theme-primary, 0.05);
 }
 
+.featured-colored-text {
+    @extend .featured-colored;
+    padding: 5px 10px;
+}
+
 .experience-image {
     max-height: 150px;
     margin-left: auto;
@@ -371,12 +376,12 @@ hr {
 }
 
 .large-tab {
-    margin-top: 20px;
-    line-height: 26.4px;
+    margin-top: 5px;
+    margin-bottom: 5px !important;
     font-size: 18px;
 
     @media screen and (min-width: 480px) {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 
