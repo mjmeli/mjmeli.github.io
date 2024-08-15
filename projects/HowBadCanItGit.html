@@ -133,7 +133,7 @@ High-level summaries of each stage of our pipeline are below:
         This provided highly flexible and powerful search approach compared to the API.
         However, since the resource was a snapshot, the repositories were not guaranteed to be actively developed and so the API keys were less likely valid.
 2. The scanning step provided us with a large dataset of millions of potential secrets.
-    Due to the limitations of the search functionality, many of the secrets may have been false positives.
+    Due to the limitations of the search functionality, some of the detected secrets may have been false positives.
     Therefore, we further scanned these secrets offline using regular expressions to ensure higher accuracy and extract the secrets themselves.
     We called the successful outputs of this phase "candidate secrets".
 3. After obtaining our filtered list of candidate secrets, we now wanted to ensure that the secrets were "valid".
