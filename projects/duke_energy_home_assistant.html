@@ -1,0 +1,170 @@
+---
+layout: project
+navbar_hide: true
+page_type: project
+
+permalink: /projects/DukeEnergyHomeAssistant/
+return_div: DukeEnergyHomeAssistant
+title: Duke Energy Home Assistant Integration
+description: A custom integration for Home Assistant that pulls real-time energy usage from Duke Energy.
+github: https://github.com/mjmeli/ha-duke-energy-gateway
+---
+<h1 class="text-center" style="margin-top: 0px">
+    Duke Energy Home Assistant Integration
+</h1>
+<p class="lead text-center project-page-lead">
+    Home Assistant is a free and open-source software solution for home automation.
+    It serves as a hub for bringing together smart home devices from a wide range of manufacturers into a single platform.
+    Duke Energy recently supported an API that provided real-time monitoring of energy usage from your smart meter.
+    I built a custom integration that brought that data into Home Assistant for energy monitoring.
+</p>
+<hr>
+
+<div class="project-page-quicklinks">
+    <div class="row text-center long-text">
+        <div class="narrow-content">
+            <div class="col-sm-4">
+                <img src="/assets/logos/github_mark.png" class="social-image" alt="GitHub Logo"/>
+                <p class=lead><a href="https://github.com/mjmeli/ha-duke-energy-gateway" target="_blank" class="btn btn-outline btn-lg">View Integration Code on GitHub</a></p>
+            </div>
+            <div class="col-sm-4">
+                <img src="/assets/logos/github_mark.png" class="social-image" alt="GitHub Logo"/>
+                <p class=lead><a href="https://github.com/mjmeli/pyduke-energy" target="_blank" class="btn btn-outline btn-lg">View Library Code on GitHub</a></p>
+            </div>
+            <div class="col-sm-4">
+                <img src="/assets/logos/python_logo.png" class="social-image" alt="Python Logo"/>
+                <p class=lead><a href="https://pypi.org/project/pyduke-energy" target="_blank" class="btn btn-outline btn-lg">View Library Package on PyPi</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="narrow-content markdown">
+# Overview
+
+### Home Assistant
+With smart home devices and home automation becoming very popular, there are many manufacturers creating products in this space.
+Often, each manufacturer will have their own app that controls their device.
+Since users want to have control centralized instead of using multiple apps, products such as Google Home have been created to serve as a single hub.
+Unfortunately, many of these products are closed source and developed by large tech companies.
+
+Home Assistant is a free and open-source alternative for home automation.
+It is built on the concept of integrations, which are "pieces of software that allow Home Assistant to connect to other software and platforms" (from [Home Assistant documentation](https://www.home-assistant.io/getting-started/concepts-terminology/#integrations)).
+For example, if you have a Google Nest thermostat, there is a Nest integration that communicates via Google's APIs to enable management and control of the thermostat by Home Assistant.
+</div>
+
+<div class="content-page-images">
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="/assets/logos/home-assistant_logo.png" class="content-image" alt="Home Assistant logo" style="max-width: 350px" />
+        </div>
+    </div>
+</div>
+
+<div class="narrow-content markdown">
+By default, Home Assistant comes standard with hundreds of integrations.
+However, they also support custom integrations, where community developers can build their own integrations and share them on a community store.
+
+Home Assistant also has a built-in feature for energy monitoring.
+If you have some integration that provides energy usage, you could connect it to this feature and get access to a neat dashboard and power statistics.
+
+### Duke Energy
+Duke Energy is the power utility for much of North Carolina, where I live.
+Every home has a smart power meter outside.
+This power meter periodically provides usage information back to Duke Energy via a remote connection (e.g., once per day).
+Unfortunately, this data is not easily accessible by residents.
+
+In 2021, Duke Energy launched a new pilot program where they would provide a "Gateway Hub" to residents.
+I signed up for this program and received the hub.
+The hub is simply a device that could read the power meter and provide live data back to Duke Energy.
+Most interestingly, Duke Energy could then provide this data through their app for users to see real-time energy usage.
+
+# Integration
+While this functionality was great, it exhibits the problem of having to use another app to access the data.
+Myself and many others online were wondering if there were a way to get this data into Home Assistant.
+Unfortunately, Duke Energy was not interested in helping assist with an integration.
+Eventually, I got tired of not having this functionality and decided to just build it myself!
+
+### Reverse Engineering
+The first step was for me to document the API.
+Since it was not documented anywhere, I worked to reverse engineer it.
+
+I went through a few different approaches before deciding on an acceptable path.
+Initially, I attempted to inject logging into the app itself.
+I did this by decompiling the Android app, locating the base API accessor, and inserting machine code that would trigger a log statement.
+I then had to recompile the app to be able to install it on a phone.
+Unfortunately, this approach did not work well, and I was never able to get it to work.
+
+Eventually I realized a much easier solution would be to just intercept the network traffic on the app.
+I used [HTTP Toolkit](https://httptoolkit.com/) to intercept the HTTPS calls of the app running in an emulator.
+</div>
+
+<div class="content-page-images">
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="/assets/projects/DukeEnergyHomeAssistant/http-toolkit.png" class="content-image" alt="Screenshot of HTTP Toolkit" />
+            <p class="text-center">Example screenshot of HTTP Toolkit. This is not from the Duke Energy app.</p>
+        </div>
+    </div>
+</div>
+
+<div class="narrow-content markdown">
+From this, I was able to quickly discovery the full extent of API calls required to access the data.
+There were a series of REST API calls that needed to be made to authenticate and then request a real-time stream of power consumption.
+The real-time usage is provided via an MQTT connection, and must be heartbeated every 15 minutes via a separate REST API call to continue.
+
+### Python Client Library
+Using this knowledge, I then built a client library in Python to wrap the API functionality.
+A key tenet of Home Assistant integrations is that any potentially common code should exist outside the integration so other community members can use it.
+As such, I built a separate package for this.
+
+I used a few major libraries within my library:
+
+1. `asyncio` - a Python module that supports writing single-threaded yet concurrent code.
+    It uses `async`/`await` to achieve an asynchronous architecture.
+2. `aiohttp` - an asynchronous HTTP client for `asyncio` and Python.
+    In short, it provides an asychronous interface for making HTTP client calls.
+3. `paho-mqtt` - a MQTT client for Python that also provides an asynchronous interface for connecting to an MQTT broker and receiving messages.
+
+### Home Assistant Integration
+With the Python library built, I was now ready to build the Home Assistant integration.
+Frankly, this was a challenging process, as I needed to learn the architecture of Home Assistant and how integrations worked.
+I also was working in a unique situation, as most integrations retrieved their data either by polling or from push events.
+In my integration, I had both polling AND push.
+I was not able to find any examples of this, and so had to pioneer it on my own.
+
+Similar to the client library, Home Assistant is written in Python with heavy usage of `asyncio`.
+
+Once connected to Home Assistant, I was excited to see the real-time power consumption coming in.
+I connected to the the energy monitoring feature and was able to collect analytics on energy usage!
+</div>
+
+<div class="content-page-images">
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="/assets/projects/DukeEnergyHomeAssistant/RealTimePowerUsage.png" class="content-image" alt="Real-time power usage" />
+            <p class="text-center">Real-time power usage</p>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="/assets/projects/DukeEnergyHomeAssistant/UsagePerHour.png" class="content-image" alt="Aggregated usage per hour" />
+            <p class="text-center">Aggregated usage per hour</p>
+        </div>
+    </div>
+</div>
+
+<div class="narrow-content markdown">
+# Maintenance
+I published the package to PyPi and the integration to the Home Assistant custom integration platform.
+For some time, I had a decent number of users and managed issues as they presented themselves.
+I also had a number of people using my client library for projects outside of Home Assistant.
+
+# Deprecation
+In 2023, Duke Energy deprecated the pilot program that was providing the real-time energy usage.
+Unfortunately, the APIs were taken offline and my integration stopped working.
+I was very disappointed in this decision, and had to deprecate the library and integration as well.
+However, the time spent working on this was an invaluable experience.
+
+</div>
